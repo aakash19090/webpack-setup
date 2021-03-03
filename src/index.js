@@ -1,3 +1,5 @@
+import './styles/index.css';
+
 const user = {
     firstName: "Akash",
     lastName: "Sharma",
