@@ -1,4 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 let mode = 'development'
 let target = 'web'
@@ -13,6 +16,8 @@ module.exports={
     target: target,
 
     output:{
+        path: path.resolve(__dirname, 'dist'), // require to mention to run CleanWebpack Plugin
+
         // To save Images in "images" directory in 'dist' folder
         assetModuleFilename: 'images/[hash][ext][query]'    
     },
@@ -46,7 +51,12 @@ module.exports={
     },
 
     plugins: [
-        new MiniCssExtractPlugin()
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body'  // To inject Javascript bundle before Body tag
+        })
     ],
 
     resolve:{
