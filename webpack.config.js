@@ -12,8 +12,18 @@ module.exports={
     mode: mode,
     target: target,
 
+    output:{
+        // To save Images in "images" directory in 'dist' folder
+        assetModuleFilename: 'images/[hash][ext][query]'    
+    },
+
     module: {
         rules:[
+            {   
+                // To save Images in "images" directory in 'dist' folder
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource'
+            },
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader' ]
