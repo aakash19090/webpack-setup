@@ -1,13 +1,17 @@
-const user = {
-    firstName: "Akash",
-    lastName: "Sharma",
-    age: 28,
-}
+import { render } from 'react-dom'
+import App from './App'
+render(<App/>, document.getElementById('root'));
 
-const user2 ={
-    ...user,
-    email: 'aakashsharma@gmail.com'
-}
+// const user = {
+//     firstName: "Akash",
+//     lastName: "Sharma",
+//     age: 28,
+// }
 
-console.log(user);
-console.log(user2);
+// const user2 ={
+//     ...user,
+//     email: 'aakashsharma@gmail.com'
+// }
+
+// console.log(user);
+// console.log(user2);

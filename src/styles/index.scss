@@ -1,0 +1,20 @@
+body{
+    background : #222;
+    color: #fff;
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        width: 100;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    h2{
+        margin: 100px 0;
+        text-align: center;
+    }
+}
